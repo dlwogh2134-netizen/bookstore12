@@ -6,81 +6,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>단기 북스</title>
 
+    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/main.css">
-</head>
+    <link rel="stylesheet" href="./css/main.css"></head>
 
 <body>
-    <header>
-        <div id="header_top">
-            <div class="container">
-                <ul id="login">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li><a href="#">장바구니</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">내 강의실</a></li>
+<header>
+    <div id="header_top">
+        <div class="container top-inner">
+            <ul class="top-menu">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">내 강의실</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="header_main">
+        <div class="container header-inner">
+            <div id="logo">
+                <div class="logo-icon"></div>
+                <h1 class="logo-text">단기북스</h1>
+            </div>
+
+            <div class="family-site">
+                <div class="family-btn">
+                    <span>공단기</span>
+                    <span class="arrow">⌃</span>
+                </div>
+
+                <ul class="family-list">
+                    <li>공단기</li>
+                    <li>기술단기</li>
+                    <li>소방단기</li>
+                    <li>공기업단기</li>
+                    <li>자단기</li>
+                    <li>영단기</li>
+                    <li>노무사단기</li>
+                    <li>법무사단기</li>
                 </ul>
             </div>
         </div>
+    </div>
 
-        <div id="header_main">
-            <div class="header_main_wrap">
-                <h1 id="logo"><a href="#">단기북스</a></h1>
-
-                <select id="site_select">
-                    <option>공단기</option>
-                    <option>경단기</option>
-                    <option>자단기</option>
-                </select>
-            </div>
+    <nav>
+        <div class="container">
+            <ul class="gnb">
+                <li><a href="#">공단기 홈</a></li>
+                <li><a href="#">선생님</a></li>
+                <li><a href="#">수강신청</a></li>
+                <li><a href="#">수험정보</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">교재</a></li>
+                <li><a href="#">풀서비스</a></li>
+                <li><a href="#">프리패스</a></li>
+                <li><a href="#">프리미엄서비스</a></li>
+            </ul>
         </div>
-
-        <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="#">공단기 홈</a></li>
-                    <li><a href="#">선생님</a></li>
-                    <li><a href="#">수강신청</a></li>
-                    <li><a href="#">수험정보</a></li>
-                    <li><a href="#">이벤트</a></li>
-                    <li><a href="#">교재</a></li>
-                    <li><a href="#">풀서비스</a></li>
-                    <li><a href="#">프리패스</a></li>
-                    <li><a href="#">프리미엄 서비스</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    </nav>
+</header>
+   
 
     <main>
-        <aside></aside>
+        
+        <aside>
+  <div class="side-box">
+    
+    <div class="side-header">
+      단기북스
+    </div>
 
+    <ul class="side-menu">
+      <li class="active">홈</li>
+      <li>전체 교재</li>
+      <li>베스트셀러</li>
+      <li class="sub">주간</li>
+      <li class="sub">월간</li>
+    </ul>
+
+    <div class="side-divider"></div>
+
+    <ul class="side-menu">
+      <li>이벤트</li>
+    </ul>
+
+  </div>
+</aside>
         <div id="main_content">
             <div id="slider">
                 <div id="slider_txt">
-                    <div class="slider-next"></div>
-                    <div class="slider-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-
-                <div class="slider_Swiper swiper">
+                <!-- Swiper -->
+                <div class="swiper sliderSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">Slide 1</div>
                         <div class="swiper-slide">Slide 2</div>
                         <div class="swiper-slide">Slide 3</div>
                     </div>
-                    <div class="slider-pagination"></div>
+
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
+           <section id="search">
+  <div class="search-wrap">
+    <h3 class="search-title">교재 검색</h3>
 
-            <div id="search"></div>
+    <div class="search-select">
+        <div class="sedlect-box">
+      <span>교재명</span>
+      <span class="search-arrow">⌄</span>
+    </div>
+</div>
+
+    <ul class="select-list">
+        <li>교재명</li>
+        <li>저자명</li>
+        <li>출판사명</li>
+        <li>ISBN</li>
+    </ul>
+    <div class="search-input-box">
+      <input type="text" placeholder="저자명/교재명 검색">
+      <button type="button" class="search-btn">⌕</button>
+    </div>
+  </div>
+</section>
             <div id="best"></div>
             <div id="banner"></div>
-
             <div id="new">
                 <h3>새로 나온 교재</h3>
-                <div class="new_Swiper swiper">
+                <!-- Swiper -->
+                <div class="swiper newSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">Slide 1</div>
                         <div class="swiper-slide">Slide 2</div>
@@ -92,42 +153,49 @@
                         <div class="swiper-slide">Slide 8</div>
                         <div class="swiper-slide">Slide 9</div>
                     </div>
-                    <div class="new-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <div class="container">
-            <div id="footer_top">
-                <ul id="footer_menu">
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul>
+         <div class="container footer-inner">
 
-                <select id="family_site">
-                    <option>패밀리 사이트</option>
-                    <option>공단기</option>
-                    <option>경단기</option>
-                    <option>자단기</option>
-                </select>
-            </div>
+    <!-- 상단 메뉴 -->
+    <ul class="footer-menu">
+      <li>회사소개</li>
+      <li>이용약관</li>
+      <li class="bold">개인정보처리방침</li>
+      <li>강사모집</li>
+    </ul>
 
-            <div id="footer_bottom">
-                <p>(주)에스티유니타스</p>
-                <p>대표자 : 홍길동 | 사업자등록번호 : 123-45-67890</p>
-                <p>주소 : 서울특별시 강남구 테헤란로 123</p>
-                <p>통신판매업신고 : 제2026-서울강남-0000호</p>
-                <p>고객센터 : 1234-5678 | 이메일 : example@company.com</p>
-                <p>Copyright © ST Unitas Corp. All Rights Reserved.</p>
-            </div>
-        </div>
+    <!-- 회사명 -->
+    <p class="company">(주)에스티유니타스</p>
+
+    <!-- 회사 정보 -->
+    <p class="company-info">
+      전화번호 : 1670-1419  |  이메일주소 : Stunitas_cs@stunitas.com  |  
+      주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 테라타워동)
+    </p>
+
+    <p class="company-info">
+      대표이사 : 김형국  |  에스티아카데미평생교육원(제1021호)  |  
+      사업자 등록번호 : 119-86-27573  |  
+      통신판매업신고 : 2022-서울구로-2373  |  
+      사용자 정보확인  |  
+      호스팅제공자 : © 2022, Amazon Web Services, Inc
+    </p>
+
+  </div>
     </footer>
 
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
     <script src="./js/swiper.js"></script>
     <script src="./js/book.js"></script>
 </body>

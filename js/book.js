@@ -4,14 +4,13 @@ async function bookData() {
         query: "미움받을 용기",
         size: 10
     });
-
     const url = `https://dapi.kakao.com/v3/search/book?${params}`;
 
     try {
         const response = await fetch(url, {
-            method: "GET",
+            method: 'GET',
             headers: {
-                Authorization: "KakaoAK ec7ef5dd2c873669cff94595bdf52bf5"
+                Authorization: "KakaoAK 7b2300fc6315bb65035d1a3c7b49b161"
             }
         });
 
@@ -20,23 +19,29 @@ async function bookData() {
         }
 
         const data = await response.json();
-        const boxElements = document.querySelectorAll(".box");
+        console.log(data);
 
+        // .box 요소 전체 선택
+        const boxElements = document.querySelectorAll("#new .swiper-slide");
+        console.log(boxElements)
+
+        // documents 데이터를 각 box에 대응하여 렌더링
         boxElements.forEach((box, i) => {
             const doc = data.documents[i];
-            if (!doc) return;
 
-            box.innerHTML = `
-                <img src="${doc.thumbnail || 'https://via.placeholder.com/120x174?text=No+Image'}" alt="${doc.title}">
-                <h3>${doc.title}</h3>
-                <h6>${doc.authors.join(", ")}</h6>
-                <p>${doc.contents ? doc.contents.substring(0, 60) + "..." : "내용 없음"}</p>
-                <button type="button">click</button>
-            `;
+            if (!doc) return; // 데이터가 부족할 경우 생략
+
+            // 요소 생성 및 추가
+            box.innerHTML = `<img src="${data.documents[i].thumbnail}">
+                    <h3>${data.documents[i].title}</h3>
+                    <h6>${data.documents[i].authors}</h6>
+                    <p>${data.documents[i].price}</p>
+                    <button>click</button>
+                    `
         });
 
     } catch (error) {
-        console.log("에러 발생:", error);
+        console.log('에러발생', error);
     }
 }
 

@@ -1,23 +1,42 @@
- //#slider swiper
- var silder_swiper = new Swiper(".Swiper", {
-            navigation: {
-                nextEl: "slider .swiper-button-next",
-                prevEl: "slider .swiper-button-prev",
-            }, pagination: {
-                el: "#slider .swiper-pagination",
-            },
-        });
+const sliderSwiper = new Swiper(".sliderSwiper", {
+  loop: true,
+  pagination: {
+    el: ".slider-pagination",
+    clickable: true
+  },
+  navigation: {
+    nextEl: ".slider-next",
+    prevEl: ".slider-prev"
+  }
+});
 
-        //#new swiper
-var new_swiper = new Swiper(".Swiper", {
+const newSwiper = new Swiper(".newSwiper", {
+  slidesPerView: 5,
+  spaceBetween: 12,
+  pagination: {
+    el: ".new-pagination",
+    clickable: true
+  },
+  navigation: {
+    nextEl: ".new-next",
+    prevEl: ".new-prev"
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 12
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 12
+    },
+    1180: {
       slidesPerView: 5,
-      spaceBetween: 30,
-      pagination: {
-        el: "#new .swiper-pagination",
-        clickable: true,
-      },
-       navigation: {
-                nextEl: "#new .swiper-button-next",
-                prevEl: "#new .swiper-button-prev",
-            },
-        }); 
+      spaceBetween: 12
+    }
+  }
+});
