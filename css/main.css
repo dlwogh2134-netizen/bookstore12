@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #fff;
   font-family: Arial, "Noto Sans KR", sans-serif;
 }
 
@@ -225,7 +225,7 @@ nav .container {
     width: 1180px;
     height: 70px;
     margin: 0 auto;
-    background-color: skyblue;
+   
 }
 
 
@@ -257,13 +257,14 @@ main {
     height: 2200px;
     margin: 0 auto;
     display: flex;
+    background-color: #fff;
   
 }
 
 aside {
-    width: 240px;
+    width: 210px;
     padding: 20px 10px;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 /* 카드 전체 */
@@ -424,19 +425,37 @@ aside {
 }
 
 #main_content {
-    width: calc(100% - 240px);
+    width: calc(100% - 210px);
     height: 100%;
-    background-color: azure;
+    background-color: #fff;
+}
+
+#content-top {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 40px;
 }
 
 #slider {
-    width: 100%;
+    width: calc(100% - 120px);
     height: 375px;
-    margin-top: 40px;
+    margin-top: 0;
     border: 1px solid #ddd;
     border-radius: 10px;
     display: flex;
-    /* background-color: green; */
+    background-color: #fff;
+}
+
+#recent-view {
+    width: 104px;
+    min-height: 375px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px 10px;
+    flex-shrink: 0;
 }
 
 #slider_txt {
@@ -479,7 +498,7 @@ aside {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    /* background: #444; */
+
 }
 
 .swiper-slide img {
