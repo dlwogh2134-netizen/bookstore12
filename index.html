@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>단기 북스</title>
 
-    <!-- Swiper CSS -->
+    <!-- Swiper CSS (지금은 있어도 되고 없어도 됨) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="./css/reset.css">
@@ -72,134 +72,139 @@
     </header>
 
     <main>
-    <aside>
-        <div class="side-box">
-            <div class="side-header">
-                단기북스
+
+        <!-- 사이드바 -->
+        <aside>
+            <div class="side-box">
+                <div class="side-header">단기북스</div>
+
+                <ul class="side-menu">
+                    <li class="active">홈</li>
+                    <li>전체 교재</li>
+                    <li>베스트셀러</li>
+                    <li class="sub">주간</li>
+                    <li class="sub">월간</li>
+                </ul>
+
+                <div class="side-divider"></div>
+
+                <ul class="side-menu">
+                    <li>이벤트</li>
+                </ul>
             </div>
+        </aside>
 
-            <ul class="side-menu">
-                <li class="active">홈</li>
-                <li>전체 교재</li>
-                <li>베스트셀러</li>
-                <li class="sub">주간</li>
-                <li class="sub">월간</li>
-            </ul>
+        <!-- 메인 -->
+        <div class="container">
+            <div id="main_content">
 
-            <div class="side-divider"></div>
+                <!-- 상단 영역 -->
+                <div id="content-top">
 
-            <ul class="side-menu">
-                <li>이벤트</li>
-            </ul>
-        </div>
-    </aside>
+                    <!-- 슬라이더 -->
+                    <div id="slider">
+                        <div id="slider_txt">
+                            <h2>공단기 <span>Pick!</span><br>추천 교재</h2>
+                            <p>단기북스 MD가<br>자신있게 추천하는 오늘의 책</p>
 
-    <div id="main_content">
-        <div id="content-top">
-            <div id="slider">
-                <div id="slider_txt">
-                    <h2>공단기 <span>Pick!</span><br>추천 교재</h2>
-                    <p>단기북스 MD가<br>자신있게 추천하는 오늘의 책</p>
+                            <div class="slider-btns">
+                                <button class="prev-btn">‹</button>
+                                <button class="next-btn">›</button>
+                            </div>
+                        </div>
 
-                    <div class="slider-btns">
-                        <button class="prev-btn">‹</button>
-                        <button class="next-btn">›</button>
+                        <div class="slider-main">
+                            <div class="main-book">
+                                <img id="slider-main-img" src="" alt="대표 책 이미지">
+                            </div>
+
+                            <div class="main-info">
+                                <h3 id="slider-title"></h3>
+                                <p id="slider-author" class="author"></p>
+                                <p class="price">
+                                    <span id="slider-discount"></span>
+                                    <span id="slider-price"></span>
+                                </p>
+                                <p id="slider-rank" class="rank"></p>
+
+                                <div id="slider-thumbs" class="thumb-list"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="slider-main">
-                    <div class="main-book">
-                        <img src="./img/썸넬.jpg" alt="이유진 국어 백일기도">
-                    </div>
-
-                    <div class="main-info">
-                        <h3>[국어] 2026 이유진 국어 백일기도 모의고사</h3>
-                        <p class="author">이유진 · 고시동네</p>
-                        <p class="price"><span>10%</span> 25,200원</p>
-                        <p class="rank">공단기 종합 베스트셀러 50위</p>
-
-                        <div class="thumb-list">
-                            <div class="thumb-item active"><img src="./img/thumb1.jpg" alt=""></div>
-                            <div class="thumb-item"><img src="./img/thumb2.jpg" alt=""></div>
-                            <div class="thumb-item"><img src="./img/thumb3.jpg" alt=""></div>
-                            <div class="thumb-item"><img src="./img/thumb4.jpg" alt=""></div>
-                            <div class="thumb-item"><img src="./img/thumb5.jpg" alt=""></div>
+                    <!-- 최근 본 상품 -->
+                    <div class="recent-view">
+                        <h4>최근 본 상품</h4>
+                        <div class="recent-empty">
+                            내역이 없습니다
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="recent-view">
-                <p>최근 본 상품<br>내역이<br>없습니다</p>
-            </div>
-        </div>
-
-        <section id="search-section">
-            <div class="search-wrap">
-                <h3 class="search-title">교재 검색</h3>
-
-                <div class="search-select">
-                    <div class="select-box">
-                        <span>교재명</span>
-                        <span class="search-arrow">⌄</span>
+                <!-- 검색 -->
+                <section id="search-section">
+                    <div class="search-wrap">
+                        <input type="text" id="search" placeholder="교재를 검색해보세요">
                     </div>
+                    <div id="search-result" class="book-grid"></div>
+                </section>
 
-                    <ul class="select-list">
-                        <li>교재명</li>
-                        <li>저자명</li>
-                        <li>출판사명</li>
-                        <li>ISBN</li>
-                    </ul>
-                </div>
+                <!-- 책 리스트 -->
+                <section class="book-section">
+                    <h2 class="section-title">공단기 베스트셀러</h2>
+                    <div id="top-book-grid" class="book-grid top-grid"></div>
 
-                <div class="search-input-box">
-                    <input type="text" id="search" placeholder="저자명/교재명 검색">
-                    <button type="button" class="search-btn" onclick="searchBook()">⌕</button>
-                </div>
+                    <h2 class="section-title">새로 나온 교재</h2>
+                    <div id="bottom-book-grid" class="book-grid bottom-grid"></div>
+                </section>
+
             </div>
-        </section>
-
-        <section class="book-section">
-            <h2 class="section-title">공단기 베스트셀러</h2>
-            <div id="top-book-grid" class="book-grid top-grid"></div>
-
-            <h2 class="section-title">새로 나온 교재</h2>
-            <div id="bottom-book-grid" class="book-grid bottom-grid"></div>
-        </section>
-    </div>
-</main>
-
-    <footer>
-        <div class="container footer-inner">
-            <ul class="footer-menu">
-                <li>회사소개</li>
-                <li>이용약관</li>
-                <li class="bold">개인정보처리방침</li>
-                <li>강사모집</li>
-            </ul>
-
-            <p class="company">(주)에스티유니타스</p>
-
-            <p class="company-info">
-                전화번호 : 1670-1419 | 이메일주소 : Stunitas_cs@stunitas.com |
-                주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 테라타워동)
-            </p>
-
-            <p class="company-info">
-                대표이사 : 김형국 | 에스티아카데미평생교육원(제1021호) |
-                사업자 등록번호 : 119-86-27573 |
-                통신판매업신고 : 2022-서울구로-2373 |
-                사용자 정보확인 |
-                호스팅제공자 : © 2022, Amazon Web Services, Inc
-            </p>
         </div>
-    </footer>
+    </main>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <ul class="footer-menu">
+        <li>회사소개</li>
+        <li>이용약관</li>
+        <li class="bold">개인정보처리방침</li>
+        <li>강사모집</li>
+      </ul>
+
+      <div class="family-site-footer">
+        <button class="family-site-btn">패밀리 사이트 ▾</button>
+      </div>
+    </div>
+
+    <p class="company">(주)에스티유니타스</p>
+
+    <p class="company-info">
+      전화번호 : 1670-1419
+      <span>|</span>
+      이메일주소 : Stunitas_cs@stunitas.com
+      <span>|</span>
+      주소 : 서울특별시 구로구 경인로 662, 15층
+      <span>(신도림동, 디큐브시티)</span>
+    </p>
+
+    <p class="company-info">
+      대표이사 : 김정주
+      <span>|</span>
+      사업자등록번호 : 119-86-27573
+      <span>|</span>
+      통신판매신고 : 2022-서울구로-2373
+      <span>|</span>
+      개인정보책임자 : 홍길동
+    </p>
+
+    <p class="company-info">
+      호스팅제공자 : © 2022, Amazon Web Services, Inc
+    </p>
+  </div>
+</footer>
 
     <!-- JS -->
-    <script src="./js/swiper.js"></script>
     <script src="./js/book.js"></script>
 </body>
 

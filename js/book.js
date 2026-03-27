@@ -19,6 +19,59 @@ const bottomBooks = [
   "2026 이유진 국어 독해 알고리즘"
 ];
 
+const sliderBooks = [
+  {
+    title: "[지방자치론] 2026 황철곤 지방자치론 - 이론+기출 ALL IN ONE",
+    author: "황철곤 · 시스퍼블",
+    price: "27,000원",
+    discount: "10%",
+    rank: "추천 교재",
+    desc: "지방자치론 핵심 이론과 기출을 한 권으로 정리한 교재입니다.",
+    mainImg: "./img/book1.jpg",
+    thumbImg: "./img/book1.jpg"
+  },
+  {
+    title: "[영어] 2026 심우철 실전 동형 모의고사 Season 2",
+    author: "심우철 · 에스티유니타스",
+    price: "13,500원",
+    discount: "10%",
+    rank: "베스트셀러 2위",
+    desc: "실전 감각을 끌어올리는 동형 모의고사 교재입니다.",
+    mainImg: "./img/book2.jpg",
+    thumbImg: "./img/book2.jpg"
+  },
+  {
+    title: "[국어] 2026 이유진 국어 백일기도 모의고사",
+    author: "이유진 · 고시동네",
+    price: "25,200원",
+    discount: "10%",
+    rank: "인기 교재",
+    desc: "국어 실전 대비용 모의고사 교재입니다.",
+    mainImg: "./img/book3.jpg",
+    thumbImg: "./img/book3.jpg"
+  },
+  {
+    title: "[한국사] 2026 문동균 한국사 기출은 문동균",
+    author: "문동균",
+    price: "22,000원",
+    discount: "5%",
+    rank: "베스트셀러",
+    desc: "기출 중심으로 한국사를 정리한 핵심 교재입니다.",
+    mainImg: "./img/book4.jpg",
+    thumbImg: "./img/book4.jpg"
+  },
+  {
+    title: "[행정법] 2026 써니 행정법총론 기출문제집",
+    author: "써니",
+    price: "28,000원",
+    discount: "10%",
+    rank: "추천 교재",
+    desc: "행정법 기출문제를 체계적으로 정리한 교재입니다.",
+    mainImg: "./img/book5.jpg",
+    thumbImg: "./img/book5.jpg"
+  }
+];
+
 function getAuthHeader() {
   return {
     Authorization: "KakaoAK ec7ef5dd2c873669cff94595bdf52bf5"
@@ -184,4 +237,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadBooks(topBooks, "top-book-grid", true);
   loadBooks(bottomBooks, "bottom-book-grid", false);
+
+ 
+  renderSlider(currentSlide);
+
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", prevSlide);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", nextSlide);
+  }
 });
+let currentSlide = 0;
+
+function renderSlider(index) {
+  const book = sliderBooks[index];
+  if (!book) return;
+
+  const mainImg = document.getElementById("slider-main-img");
+  const title = document.getElementById("slider-title");
+  const author = document.getElementById("slider-author");
+  const discount = document.getElementById("slider-discount");
+  const price = document.getElementById("slider-price");
+  const rank = document.getElementById("slider-rank");
+  const desc = document.getElementById("slider-desc");
+  const thumbs = document.getElementById("slider-thumbs");
+
+  if (!mainImg || !title || !author || !discount || !price || !rank || !thumbs) return;
+
+  mainImg.src = book.mainImg;
+  mainImg.alt = book.title;
+  title.textContent = book.title;
+  author.textContent = book.author;
+  discount.textContent = book.discount;
+  price.textContent = book.price;
+  rank.textContent = book.rank;
+
+  if (desc) {
+    desc.textContent = book.desc || "";
+  }
+
+  thumbs.innerHTML = "";
+
+  sliderBooks.forEach((item, i) => {
+    const thumb = document.createElement("img");
+    thumb.src = item.thumbImg || item.mainImg;
+    thumb.alt = item.title;
+    thumb.className = `thumb ${i === index ? "active" : ""}`;
+
+    thumb.addEventListener("click", () => {
+      currentSlide = i;
+      renderSlider(currentSlide);
+    });
+
+    thumbs.appendChild(thumb);
+  });
+}
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % sliderBooks.length;
+  renderSlider(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + sliderBooks.length) % sliderBooks.length;
+  renderSlider(currentSlide);
+}
+
+setInterval(() => {
+  nextSlide();
+}, 3000); // 3초마다 자동 슬라이드
