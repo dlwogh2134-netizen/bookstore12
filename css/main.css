@@ -71,6 +71,7 @@ header {
   height: 70px;
   margin: 0 auto;
   background-color: #fff;
+  display: flex;
 }
 
 .header-inner {
@@ -86,6 +87,9 @@ header {
   gap: 12px;
 }
 
+#header_main img{
+ width: 175px;
+}
 .logo-text {
   font-size: 28px;
   font-weight: 800;
@@ -113,6 +117,7 @@ header {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+  margin-top: 6px;
 }
 
 .arrow {
@@ -720,3 +725,17 @@ footer {
   margin: 0 6px;
   color: #c7c7c7;
 }
+
+.company-banner {
+  width: 100%;
+  margin: 30px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.company-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
