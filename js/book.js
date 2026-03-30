@@ -123,7 +123,8 @@ function createBookCard(book, index = null) {
   const numberBadge =
     index !== null ? `<span class="book-rank">${index + 1}</span>` : "";
 
-  return `
+return `
+  <a href="./sub.html" class="book-link">
     <div class="book-item">
       <div class="book-thumb">
         <img src="${img}" alt="${book.title}">
@@ -138,7 +139,8 @@ function createBookCard(book, index = null) {
         </p>
       </div>
     </div>
-  `;
+  </a>
+`;
 }
 
 async function loadBooks(bookList, containerId, showRank = false) {
