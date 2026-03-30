@@ -312,3 +312,16 @@ function prevSlide() {
 setInterval(() => {
   nextSlide();
 }, 3000); // 3초마다 자동 슬라이드
+
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    item.classList.toggle("active");
+
+    const content = header.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
