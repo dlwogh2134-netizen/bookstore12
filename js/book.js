@@ -45,7 +45,7 @@ const sliderBooks = [
     author: "이유진 · 고시동네",
     price: "25,200원",
     discount: "10%",
-    rank: "인기 교재",
+    rank: "공단기 종합베스트셀러 33위",
     desc: "국어 실전 대비용 모의고사 교재입니다.",
     mainImg: "./img/book3.jpg",
     thumbImg: "./img/book3.jpg"
@@ -312,3 +312,16 @@ function prevSlide() {
 setInterval(() => {
   nextSlide();
 }, 3000); // 3초마다 자동 슬라이드
+
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    item.classList.toggle("active");
+
+    const content = header.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
